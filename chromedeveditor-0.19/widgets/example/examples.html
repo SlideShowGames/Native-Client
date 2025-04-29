@@ -1,0 +1,29 @@
+<polymer-element name="widget-examples">
+  <template>
+    <style>
+      body {
+        font-family: 'sans-serif';
+      }
+
+      a {
+        color: blue;
+      }
+
+      a:visited {
+        color: purple;
+      }
+    </style>
+
+    <div>
+      <ul>
+        <template repeat="{{link in links}}">
+          <li>
+            <a href='{{link}}/index.html'>{{link}}</a>
+          </li>
+        </template>
+      </ul>
+    </div>
+  </template>
+
+  <script type="application/dart" src="examples.dart"></script>
+</polymer-element>

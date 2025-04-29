@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<!-- Copyright (c) 2013, Google Inc. Please see the AUTHORS file for details.
+     All rights reserved. Use of this source code is governed by a BSD-style
+     license that can be found in the LICENSE file. -->
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Chrome Dev Editor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="spark_polymer.css">
+
+  <!-- Load Polymer -->
+  <script src="packages/web_components/webcomponents.min.js"></script>
+  <script src="packages/web_components/dart_support.js"></script>
+
+  <link rel="import" href="spark_polymer_ui.html">
+
+  <!-- Analytics includes -->
+  <script src="third_party/analytics/google-analytics-bundle.js"></script>
+
+  <!-- Ace includes -->
+  <script src="packages/ace/src/js/ace.js"></script>
+  <script src="packages/ace/src/js/ext-language_tools.js"></script>
+  <script src="packages/ace/src/js/ext-linking.js"></script>
+
+  <!-- CSSBeautify includes -->
+  <script src="third_party/cssbeautify/cssbeautify.js"></script>
+
+  <!-- JSHint includes -->
+  <script src="third_party/jshint/jshint.js"></script>
+</head>
+
+<body>
+  <!-- Template for FileItemCell -->
+  <template id="fileview-filename-template" >
+    <div class="fileview-filename-container">
+      <div class="filename">
+        <span id="fileName" class="nameField"></span>
+        <span id="fileInfo" class="infoField text-muted"></span>
+      </div>
+      <div class="gitStatus"></div>
+    </div>
+  </template>
+
+  <!-- Template for Files View separator -->
+  <template id="fileview-separator">
+    <div class="fileview-separator"><div class="line"></div></div>
+  </template>
+
+  <!-- Template for TreeViewCell -->
+  <template id="treeview-cell-template" >
+    <div class="treeviewcell">
+      <div class="treeviewcell-status"></div>
+      <div class="treeviewcell-content"></div>
+      <div class="treeviewcell-dragoverlay"></div>
+      <div class="treeviewcell-disclosure">
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="6 6 12 12">
+          <path d="M7 10l5 5 5-5z"/>
+        </svg>
+      </div>
+    </div>
+  </template>
+
+  <!-- Markdown template -->
+  <template id="markdown-template" >
+    <div id="markdownContent" class="markdown-body dark">
+    </div>
+  </template>
+
+  <!-- Splash screen. -->
+  <div id="splashScreen">
+    <div id="splashScreenProgress"></div>
+  </div>
+
+  <!-- Top-level UI element. -->
+  <spark-polymer-ui id="topUi">
+  </spark-polymer-ui>
+
+  <!-- A backdrop veil used to make app appear modal when displaying dialogs. -->
+  <!-- TODO(ussuri): Make part of spark-modal implementation. -->
+  <div id="modalBackdrop"></div>
+
+  <div id="android-rsa-container">
+    <!-- Filled out later by lib/android_rsa.js -->
+  </div>
+
+  <div id="git-salt-container">
+    <!-- Filled out later by lib/git_salt/common.js -->
+  </div>
+
+  <script type="application/javascript" src="third_party/uuid.js/uuid.js"></script>
+  <script type="application/javascript" src="lib/mobile/android_rsa.js"></script>
+  <script type="application/javascript" src="third_party/wam/wam_fs.concat.js"></script>
+  <script type="application/javascript" src="lib/wam/wamfs.js"></script>
+  <script type="application/javascript" src="lib/git_salt/git_salt.js"></script>
+
+  <!-- Start Spark in a deployed build. -->
+  <script type="application/dart" src="spark_polymer.dart"></script>
+</body>
+
+</html>

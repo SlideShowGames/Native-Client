@@ -1,0 +1,14 @@
+../lib/libclang-cpp.so
+../lib/libclang-cpp.so.19.0git
+../lib/libclang-cpp.so.19git
+../lib/libclang.so
+../lib/libclang.so.19.0.0git
+../lib/libclang.so.19git
+../lib/libLLVM-19.0.0git.so
+../lib/libLLVM-19git.so
+../lib/libLLVM.so
+../lib/libLLVM.so.19.0git
+../lib/libLTO.so
+../lib/libLTO.so.19git
+../lib/libRemarks.so
+../lib/libRemarks.so.19git
